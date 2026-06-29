@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: WeTender
+  mongodb:
+    uri:
+      ${MONGODB_URI}
+    database:
+      db_wetender_user
