@@ -13,6 +13,7 @@ public class SignUpController {
     @Resource
     private SignUpService signUpService;
 
+    // Sign up
     @PostMapping
     public SignUpResponse signUp(@RequestBody SignUpDto dto){
         return signUpService.signUpRecord(dto);

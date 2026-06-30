@@ -14,7 +14,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http.authorizeHttpRequests((authorize)->authorize
-                .requestMatchers("/signup").permitAll()
+                .requestMatchers("/signup", "/signin").permitAll()
                 )
                 .csrf(AbstractHttpConfigurer::disable);
         return http.build();

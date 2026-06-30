@@ -12,4 +12,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<?> handleEmailAlreadyExistsException(EmailAlreadyExistsException e){
         return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
     }
+
+    @ExceptionHandler(EmailOrPwdInvalidException.class)
+    public ResponseEntity<?> handleEmailOrPwdNotExistsException(EmailOrPwdInvalidException e){
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
+    }
 }
