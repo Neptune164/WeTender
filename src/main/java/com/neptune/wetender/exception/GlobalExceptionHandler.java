@@ -1,6 +1,5 @@
-package com.neptune.wetender.controller;
+package com.neptune.wetender.exception;
 
-import com.neptune.wetender.exception.EmailAlreadyExistsException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
