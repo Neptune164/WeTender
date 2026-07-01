@@ -22,21 +22,17 @@ public class SignInService {
 
     public SignInResponse signInRecord(SignInDto dto){
         Optional<UserDocument> user = userRepository.findByEmail(dto.getEmail());
-        SignInResponse response = new SignInResponse();
-        if(user.isPresent()){
-            UserDocument doc = user.get();
-            if(encoder.matches(dto.getPwd(), doc.getPwdHash())){
-                response.setId(doc.get_id());
-                response.setUserName(doc.getUserName());
-                response.setEmail(doc.getEmail());
-                response.setSignInTime(LocalDateTime.now());
-                response.setMessage("Sign in successfully!");
-            }else{
-                throw new EmailOrPwdInvalidException("Email or Password is invalid.");
-            }
-        }else{
-            throw new EmailOrPwdInvalidException("Email or Password is invalid.");
+
+        UserDocument doc = user.orElseThrow(EmailOrPwdInvalidException::new);
+        if(!encoder.matches(dto.getPwd(), doc.getPwdHash())){
+            throw new EmailOrPwdInvalidException();
         }
+        SignInResponse response = new SignInResponse();
+        response.setId(doc.get_id());
+        response.setUserName(doc.getUserName());
+        response.setEmail(doc.getEmail());
+        response.setSignInTime(LocalDateTime.now());
+        response.setMessage("Sign in successfully!");
         return response;
     }
 }

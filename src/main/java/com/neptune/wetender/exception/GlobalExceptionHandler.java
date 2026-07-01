@@ -14,7 +14,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(EmailOrPwdInvalidException.class)
-    public ResponseEntity<?> handleEmailOrPwdNotExistsException(EmailOrPwdInvalidException e){
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
+    public ResponseEntity<?> handleEmailOrPwdInvalidException(EmailOrPwdInvalidException e){
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Email or Password is invalid.");
     }
 }

@@ -1,7 +1,5 @@
 package com.neptune.wetender.exception;
 
 public class EmailOrPwdInvalidException extends RuntimeException {
-    public EmailOrPwdInvalidException(String message) {
-        super(message);
-    }
+    public EmailOrPwdInvalidException(){}
 }
