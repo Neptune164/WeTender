@@ -1,5 +1,7 @@
 package com.neptune.wetender;
 
+import com.neptune.wetender.properties.OllamaProperties;
+import jakarta.annotation.Resource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,5 +11,4 @@ public class WeTenderApplication {
     public static void main(String[] args) {
         SpringApplication.run(WeTenderApplication.class, args);
     }
-
 }

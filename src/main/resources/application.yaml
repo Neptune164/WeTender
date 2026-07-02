@@ -6,3 +6,8 @@ spring:
       ${MONGODB_URI}
     database:
       db_wetender_user
+
+app:
+  ollama:
+    base-url: ${OLLAMA_BASE_URL}
+    api-key: ${OLLAMA_API_KEY}
