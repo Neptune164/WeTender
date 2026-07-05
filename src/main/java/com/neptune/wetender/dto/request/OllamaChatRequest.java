@@ -1,4 +1,4 @@
-package com.neptune.wetender.dto;
+package com.neptune.wetender.dto.request;
 
 import lombok.Data;
 

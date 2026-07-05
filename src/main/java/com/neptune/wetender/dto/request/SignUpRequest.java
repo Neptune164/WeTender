@@ -1,9 +1,9 @@
-package com.neptune.wetender.dto;
+package com.neptune.wetender.dto.request;
 
 import lombok.Data;
 
 @Data
-public class SignUpDto {
+public class SignUpRequest {
     private String userName;
 
     private String email;

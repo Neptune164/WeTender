@@ -1,4 +1,4 @@
-package com.neptune.wetender.vo;
+package com.neptune.wetender.dto.response;
 
 import lombok.Data;
 

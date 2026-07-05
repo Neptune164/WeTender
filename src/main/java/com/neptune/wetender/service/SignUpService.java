@@ -1,10 +1,10 @@
 package com.neptune.wetender.service;
 
-import com.neptune.wetender.dto.SignUpDto;
+import com.neptune.wetender.dto.request.SignUpRequest;
 import com.neptune.wetender.entity.UserDocument;
 import com.neptune.wetender.exception.EmailAlreadyExistsException;
 import com.neptune.wetender.repository.UserRepository;
-import com.neptune.wetender.vo.SignUpResponse;
+import com.neptune.wetender.dto.response.SignUpResponse;
 import jakarta.annotation.Resource;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ public class SignUpService {
     @Resource
     private PasswordEncoder encoder;
 
-    public SignUpResponse signUpRecord(SignUpDto dto){
+    public SignUpResponse signUpRecord(SignUpRequest dto){
         // Request DTO and Document
         UserDocument user = new UserDocument();
         user.setUserName(dto.getUserName());

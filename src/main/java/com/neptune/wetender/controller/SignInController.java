@@ -1,8 +1,7 @@
 package com.neptune.wetender.controller;
 
-import com.neptune.wetender.dto.SignInDto;
+import com.neptune.wetender.dto.request.SignInRequest;
 import com.neptune.wetender.service.SignInService;
-import com.neptune.wetender.vo.SignInResponse;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +13,7 @@ public class SignInController {
     private SignInService signInService;
 
     @PostMapping
-    public SignInResponse signIn(@RequestBody SignInDto dto){
+    public com.neptune.wetender.dto.response.SignInResponse signIn(@RequestBody SignInRequest dto){
         return signInService.signInRecord(dto);
     }
 }
