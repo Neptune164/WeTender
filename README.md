@@ -10,7 +10,7 @@
 - MongoDB Atlas, Spring Data MongoDB
 
 #### AI:
-- Ollama Cloud DeepSeek API
+- Ollama Cloud gpt-oss-20b:cloud API
 
 #### Architecture:
 - RESTful API
