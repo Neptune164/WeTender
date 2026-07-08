@@ -8,3 +8,4 @@ public interface UserRepository extends MongoRepository<UserDocument, String> {
     Optional<UserDocument> findByEmail(String email);
     boolean existsByEmail(String email);
 }
+// TODO: ReactiveMonoRepository + WebClient

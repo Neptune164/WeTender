@@ -4,7 +4,7 @@ import com.neptune.wetender.dto.request.SignUpRequest;
 import com.neptune.wetender.entity.UserDocument;
 import com.neptune.wetender.exception.EmailAlreadyExistsException;
 import com.neptune.wetender.repository.UserRepository;
-import com.neptune.wetender.dto.response.SignUpResponse;
+import com.neptune.wetender.vo.SignUpResponse;
 import jakarta.annotation.Resource;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

@@ -2,7 +2,7 @@ package com.neptune.wetender.controller;
 
 import com.neptune.wetender.dto.request.SignUpRequest;
 import com.neptune.wetender.service.SignUpService;
-import com.neptune.wetender.dto.response.SignUpResponse;
+import com.neptune.wetender.vo.SignUpResponse;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 

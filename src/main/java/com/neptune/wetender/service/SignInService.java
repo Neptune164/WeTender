@@ -4,6 +4,7 @@ import com.neptune.wetender.dto.request.SignInRequest;
 import com.neptune.wetender.entity.UserDocument;
 import com.neptune.wetender.exception.EmailOrPwdInvalidException;
 import com.neptune.wetender.repository.UserRepository;
+import com.neptune.wetender.vo.SignInResponse;
 import jakarta.annotation.Resource;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -19,14 +20,14 @@ public class SignInService {
     @Resource
     private PasswordEncoder encoder;
 
-    public com.neptune.wetender.dto.response.SignInResponse signInRecord(SignInRequest dto){
+    public SignInResponse signInRecord(SignInRequest dto){
         Optional<UserDocument> user = userRepository.findByEmail(dto.getEmail());
 
         UserDocument doc = user.orElseThrow(EmailOrPwdInvalidException::new);
         if(!encoder.matches(dto.getPwd(), doc.getPwdHash())){
             throw new EmailOrPwdInvalidException();
         }
-        com.neptune.wetender.dto.response.SignInResponse response = new com.neptune.wetender.dto.response.SignInResponse();
+        SignInResponse response = new SignInResponse();
         response.setId(doc.get_id());
         response.setUserName(doc.getUserName());
         response.setEmail(doc.getEmail());
